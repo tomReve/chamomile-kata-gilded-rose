@@ -36,9 +36,10 @@ class Shop {
           }
         }
       }
-      if (itemName != 'Sulfuras, Hand of Ragnaros') {
-        itemSellIn--;
-      }
+
+      itemSellIn = this.reduceSellIn(itemName, itemSellIn)
+
+      
       if (itemSellIn < 0) {
         if (itemName != 'Aged Brie') {
           if (itemName != 'Backstage passes to a TAFKAL80ETC concert') {
@@ -61,6 +62,13 @@ class Shop {
     }
 
     return this.items;
+  }
+
+  reduceSellIn(itemName, itemSellIn) {
+    if (itemName != 'Sulfuras, Hand of Ragnaros') {
+      return itemSellIn - 1;
+    }
+    return itemSellIn;
   }
 }
 module.exports = {
