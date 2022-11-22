@@ -22,10 +22,8 @@ class Shop {
       let itemSellIn = this.items[i].sellIn;
 
       if (itemName != 'Aged Brie' && itemName != 'Backstage passes to a TAFKAL80ETC concert') {
-        if (itemQuality > 0) {
-          if (itemName != 'Sulfuras, Hand of Ragnaros') {
+        if (itemQuality > 0 && itemName != 'Sulfuras, Hand of Ragnaros') {
             itemQuality = itemQuality - 1;
-          }
         } 
       } else {
         if (itemQuality < 50) {
