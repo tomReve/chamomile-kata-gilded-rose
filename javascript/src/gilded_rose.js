@@ -39,21 +39,8 @@ class Shop {
 
       itemSellIn = this.reduceSellIn(itemName, itemSellIn)
 
-      
       if (itemSellIn < 0) {
-        if (itemName != 'Aged Brie') {
-          if (itemName != 'Backstage passes to a TAFKAL80ETC concert') {
-            if (itemQuality > 0 && itemName != 'Sulfuras, Hand of Ragnaros') {
-                itemQuality--;
-            }
-          } else {
-            itemQuality = 0;
-          }
-        } else {
-          if (itemQuality < 50) {
-            itemQuality++;
-          }
-        }
+        itemQuality = this.reduceQualityIfSellInPassed(itemName, itemQuality)
       }
 
       this.items[i].name = itemName;
@@ -69,6 +56,24 @@ class Shop {
       return itemSellIn - 1;
     }
     return itemSellIn;
+  }
+
+  reduceQualityIfSellInPassed(itemName, itemQuality){
+    if (itemName != 'Aged Brie') {
+      if (itemName != 'Backstage passes to a TAFKAL80ETC concert') {
+        if (itemQuality > 0 && itemName != 'Sulfuras, Hand of Ragnaros') {
+            itemQuality--;
+        }
+      } else {
+        itemQuality = 0;
+      }
+    } else {
+      if (itemQuality < 50) {
+        itemQuality++;
+      }
+    }
+
+    return itemQuality;
   }
 }
 module.exports = {
