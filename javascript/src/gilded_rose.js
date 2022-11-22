@@ -56,7 +56,7 @@ class Shop {
               }
             }
           } else {
-            itemQuality = itemQuality - itemQuality;
+            itemQuality = 0;
           }
         } else {
           if (itemQuality < 50) {
