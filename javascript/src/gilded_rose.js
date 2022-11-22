@@ -23,34 +23,34 @@ class Shop {
 
       if (itemName != 'Aged Brie' && itemName != 'Backstage passes to a TAFKAL80ETC concert') {
         if (itemQuality > 0 && itemName != 'Sulfuras, Hand of Ragnaros') {
-            itemQuality = itemQuality - 1;
+            itemQuality--;
         } 
       } else {
         if (itemQuality < 50) {
-          itemQuality = itemQuality + 1;
+          itemQuality++;
           if (itemName == 'Backstage passes to a TAFKAL80ETC concert' && itemSellIn < 11 && itemQuality < 50) {
-            itemQuality = itemQuality + 1;
+            itemQuality++;
             if (itemSellIn < 6 && itemQuality < 50) {
-              itemQuality = itemQuality + 1;
+              itemQuality++;
             }
           }
         }
       }
       if (itemName != 'Sulfuras, Hand of Ragnaros') {
-        itemSellIn = itemSellIn - 1;
+        itemSellIn--;
       }
       if (itemSellIn < 0) {
         if (itemName != 'Aged Brie') {
           if (itemName != 'Backstage passes to a TAFKAL80ETC concert') {
             if (itemQuality > 0 && itemName != 'Sulfuras, Hand of Ragnaros') {
-                itemQuality = itemQuality - 1;
+                itemQuality--;
             }
           } else {
             itemQuality = 0;
           }
         } else {
           if (itemQuality < 50) {
-            itemQuality = itemQuality + 1;
+            itemQuality++;
           }
         }
       }
